@@ -24,8 +24,6 @@ down_l = screen.onkeypress(paddle_right.move_down, "Down")
 up_r = screen.onkeypress(paddle_left.move_up, "w")
 down_r = screen.onkeypress(paddle_left.move_down, "s")
 
-score_l = 0
-score_r = 0
 score = Score()
 speed = 0.07
 game_is_on = True
@@ -45,14 +43,12 @@ while game_is_on:
 
 
     if ball.xcor() > 440 :
-        score_l += 1
-        score.right_score(score_l)
+        score.right_score()
         speed = 0.07
         ball.restart()
 
     if ball.xcor() < -440:
-        score_r += 1
-        score.left_score(score_r)
+        score.left_score()
         speed = 0.07
         ball.restart()
 
